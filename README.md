@@ -1,12 +1,15 @@
-# Tau Core Foundation Paper II
+# Tau Core Foundation Paper III
 
 ## Complete Record Edges, Path Holonomy, and Recovery-Correctable Readouts
 
 This repository contains the reviewer-facing technical manuscript and
-reproducibility package for Tau Core Foundation Paper II.
+reproducibility package for Tau Core Foundation Paper III.
 
-The current 10-page manuscript distinguishes state-family, operator-system,
-correctable-algebra and full-code recovery. For approximate recovery it proves
+The current reviewer manuscript is 13 A4 pages.
+
+The manuscript follows the source-signature analysis of Foundation Paper II
+and distinguishes state-family, operator-system, correctable-algebra and
+full-code recovery. For approximate recovery it proves
 an explicit Uhlmann-chord loss bound from a trace-norm or diamond-norm error
 certificate. The finite body-action identification remains a separate open
 Tau-specific input.
@@ -20,6 +23,8 @@ Foundation Paper I. It proves conditional internal results for:
 - irreversible CP maps with an exact recovery;
 - a three-qubit recovery-correctable toy construction;
 - the commuting-record reversibility no-go;
+- a quantitative partial-dephasing control invisible to diagonal records;
+- a carrier-class evidence table and a typed proof/falsification dependency;
 - the strengthened `FOC-7` occupation certificate.
 
 ## Claim Boundary
@@ -40,6 +45,6 @@ runs the public tests.
 
 ## Outputs
 
-- `paperII_submission_source/main.pdf`
+- `paperIII_submission_source/main.pdf`
 - `arxiv_submission_source.zip`
 - `data/derived/recovery_toy_summary.json`

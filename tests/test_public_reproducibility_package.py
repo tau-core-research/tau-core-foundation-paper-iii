@@ -3,7 +3,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEX = ROOT / "paperII_submission_source" / "main.tex"
+TEX = ROOT / "paperIII_submission_source" / "main.tex"
 
 
 def test_required_files_exist():
@@ -13,8 +13,8 @@ def test_required_files_exist():
         ROOT / "CITATION.cff",
         ROOT / "DATA_NOTICE.md",
         TEX,
-        ROOT / "paperII_submission_source" / "refs.bib",
-        ROOT / "paperII_submission_source" / "main.pdf",
+        ROOT / "paperIII_submission_source" / "refs.bib",
+        ROOT / "paperIII_submission_source" / "main.pdf",
         ROOT / "arxiv_submission_source.zip",
     ]:
         assert path.exists(), path
@@ -24,7 +24,7 @@ def test_claim_boundaries_and_results():
     text = TEX.read_text()
     normalized = " ".join(text.split())
     for marker in [
-        "Foundation Paper II",
+        "Foundation Paper III",
         "Exact finite identity on a complete edge",
         "Claim-complete operational descriptor",
         "Recovery sandwich",
@@ -83,7 +83,7 @@ def test_figures_and_arxiv_source():
     text = TEX.read_text()
     for name in ["fig_edge_branch.pdf", "fig_holonomy_triangle.pdf"]:
         assert name in text
-        assert (ROOT / "paperII_submission_source" / "figures" / name).exists()
+        assert (ROOT / "paperIII_submission_source" / "figures" / name).exists()
     with zipfile.ZipFile(ROOT / "arxiv_submission_source.zip") as archive:
         names = archive.namelist()
     assert "main.tex" in names

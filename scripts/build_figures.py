@@ -8,7 +8,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "figures"
-SRC_OUT = ROOT / "paperII_submission_source" / "figures"
+SRC_OUT = ROOT / "paperIII_submission_source" / "figures"
 
 
 def box(ax, xy, width, height, text, color):

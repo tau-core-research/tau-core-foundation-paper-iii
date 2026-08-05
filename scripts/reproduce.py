@@ -6,7 +6,7 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "paperII_submission_source"
+SRC = ROOT / "paperIII_submission_source"
 
 
 def run(cmd, cwd=ROOT):
@@ -42,7 +42,7 @@ def main():
     compile_pdf()
     run([sys.executable, "scripts/build_arxiv_source.py"])
     run([sys.executable, "-m", "pytest", "-q"])
-    print("FOUNDATION_PAPER_II_REPRODUCTION_COMPLETE")
+    print("FOUNDATION_PAPER_III_REPRODUCTION_COMPLETE")
 
 
 if __name__ == "__main__":

@@ -25,7 +25,7 @@
 \newcommand{\Ad}{\operatorname{Ad}}
 
 \title{\textbf{Complete Record Edges, Path Holonomy, and Recovery-Correctable Readouts}\\
-\large Tau Core Foundation Paper II}
+\large Tau Core Foundation Paper III}
 \author{Jozsef Olcsak\\\small Independent researcher}
 \date{Draft v0.1 --- 2026}
 
@@ -527,6 +527,232 @@ The two channels induce identical probabilities for every state and effect in
 same likelihood under both hypotheses.  An off-diagonal state/effect or a
 recovery test separates them.
 \end{proof}
+
+\section{Why recovery is the relevant physical distinction}
+
+The preceding results separate three statements that are often conflated.
+First, an output may retain enough classical statistics to reproduce a chosen
+endpoint table.  Second, a channel may preserve all pairwise state distances
+on a declared family.  Third, a physical operation may admit a recovery on the
+full operator system carrying that family.  Only the third statement certifies
+that the apparently retained information was not silently converted into a
+smaller commuting record.
+
+This distinction matters for a morphological readout proposal because the
+target identity \(x_A=x_Q\) concerns a finite state geometry, not merely one
+probability distribution.  If the source-side action distinguishes coherent
+directions that the observer process dephases, then a diagonal endpoint test
+can report agreement while the claimed common geometry has already been lost.
+The recovery domain therefore belongs to the physical claim:
+\begin{equation}
+ \text{action support}
+ \supseteq \mathcal S_{\rm occ}
+ \xrightarrow{\mathcal C}
+ \mathcal C(\mathcal S_{\rm occ})
+ \xrightarrow{\mathcal R}
+ \mathcal S_{\rm occ}.
+ \label{eq:recovery-claim-chain}
+\end{equation}
+If the last arrow is certified only on a state family, no conclusion about an
+unmeasured coherent observable follows.  If it holds on a correctable algebra,
+all encoded states and effects of that algebra are retained.  This is why the
+paper keeps state-family, operator-system, algebra and full-code claims
+separate rather than using ``information preserving'' as an untyped phrase.
+
+\section{A quantitative nonrecoverable dephasing control}
+
+Consider the qubit dephasing family
+\begin{equation}
+ \mathcal D_\lambda(\rho)
+ ={1+\lambda\over2}\rho+{1-\lambda\over2}Z\rho Z,
+ \qquad 0\leq\lambda\leq1.
+ \label{eq:partial-dephasing}
+\end{equation}
+It fixes every diagonal state.  For the coherent pair
+\begin{equation}
+ \rho_+=|+\rangle\langle+|,
+ \qquad
+ \rho_-=|-\rangle\langle-|,
+\end{equation}
+the input states are orthogonal and hence
+\begin{equation}
+ x_{\rm in}=2.
+\end{equation}
+Their outputs have Bloch vectors \(\pm\lambda\hat x\).  The squared fidelity is
+\begin{equation}
+ F\bigl(\mathcal D_\lambda\rho_+,
+        \mathcal D_\lambda\rho_-\bigr)=1-\lambda^2,
+\end{equation}
+so the output chord is
+\begin{equation}
+ x_{\rm out}(\lambda)=2\left(1-\sqrt{1-\lambda^2}\right).
+ \label{eq:dephasing-chord}
+\end{equation}
+Thus \(x_{\rm out}(0)=0\), \(x_{\rm out}(1)=2\), and every
+\(0\leq\lambda<1\) strictly contracts the coherent separation.  Meanwhile all
+diagonal preparations and effects are exactly independent of \(\lambda\).
+
+\begin{proposition}[Continuous hidden-contraction family]
+No descriptor restricted to the diagonal algebra can estimate the coherent
+chord loss in Eq.~\eqref{eq:dephasing-chord}.  A single predeclared
+\(X\)-coherence witness identifies \(\lambda\) and therefore the lost finite
+separation.
+\end{proposition}
+\begin{proof}
+The restriction of \(\mathcal D_\lambda\) to the diagonal algebra is the
+identity for every \(\lambda\), proving non-identifiability there.  On the
+input \(\rho_+\), the expectation of \(X\) is
+\(\Tr[X\mathcal D_\lambda(\rho_+)]=\lambda\).  Substitution into
+Eq.~\eqref{eq:dephasing-chord} reconstructs the chord.
+\end{proof}
+
+This control is deliberately simpler than the three-qubit recovery example.
+Together they bracket the decision: non-isomorphic and noisy need not mean
+information-losing on a code, while perfect agreement on a classical record
+need not mean preservation of the occupied quantum geometry.
+
+\section{Carrier classes and admissible claims}
+
+The theorem does not require one preferred hardware platform.  It requires a
+carrier whose operational scope matches the claimed recovery scope.  Table
+\ref{tab:carrier-classes} lists the minimum evidence for broad candidate
+classes; none is asserted to be a Tau carrier.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{p{0.22\linewidth}p{0.31\linewidth}p{0.36\linewidth}}
+\toprule
+Candidate class & Natural record support & Missing decisive certificate\\
+\midrule
+Superconducting or spin qubit
+& Full two-level operator system with controllable coherent bases
+& Independent source-action reconstruction and certified recovery/decoherence budget\\
+Trapped ion or metastable atom
+& Long-lived internal states with single-shot discrimination
+& Same-carrier action curvature and held-record timing on a frozen protocol\\
+Photon polarization/path
+& High-quality tomography and explicit path holonomy
+& Metastable one-record hold and separation of propagation loss from source geometry\\
+Macroscopic pointer record
+& Stable, redundant commuting outcomes
+& Coherent witness or recovery on a larger operator system; diagonal stability alone is insufficient\\
+\bottomrule
+\end{tabular}
+\caption{Candidate carrier classes and the evidence still needed before a
+finite record packet can be promoted.  Familiar hardware supplies controls,
+not the Tau-specific action--Uhlmann identity.}
+\label{tab:carrier-classes}
+\end{table}
+
+The table also clarifies effect size.  A QOR timing test is meaningful only
+after the finite geometry has been certified with uncertainty smaller than
+the separation under test.  If \(\eta_{\rm rec}\) makes the upper bound in
+Eq.~\eqref{eq:approx-recovery-piecewise} comparable to \(x_{\rm in}\), then
+the carrier cannot distinguish a Tau-specific finite identity from ordinary
+channel contraction, regardless of timing precision.
+
+\section{Proof and falsification dependency}
+
+The logical order of the paper is finite:
+\begin{equation}
+ \boxed{
+ \begin{array}{c}
+ \text{typed occupied support}\
+ \Downarrow\\
+ \text{complete edge or certified recovery}\
+ \Downarrow\\
+ \text{Uhlmann-chord preservation}\
+ \Downarrow\quad\text{plus independent source action}\\
+ x_A=x_Q\\
+ \Downarrow\quad\text{plus held record and }\Delta H\\
+ \text{QOR timing test}.
+ \end{array}}
+ \label{eq:dependency-spine}
+\end{equation}
+Failure at an earlier row cannot be repaired by a successful later timing
+fit.  Conversely, failure of exact recovery need not reject every finite
+readout model: it selects the approximate branch and requires the explicit
+loss ledger of Eq.~\eqref{eq:approx-recovery-chord-bound}.  The decisive
+falsification targets are therefore typed: failure of coherent/recovery
+evidence rejects complete transport on the tested support; failure of
+\(x_A=x_Q\) rejects the common-action identification; and a timing violation
+rejects the occupied QOR completion only after both upstream certificates
+have passed.
+
+\subsection{Recovery-error budgets before timing}
+
+For a target input chord \(x_*\), define the worst-case unresolved fractional
+loss
+\begin{equation}
+ r_{\rm loss}(x_*,\eta)
+ ={x_*-[\max\{0,\sqrt{x_*}-2\sqrt\eta\}]^2\over x_*}.
+ \label{eq:fractional-loss-budget}
+\end{equation}
+The recovery certificate is informative at fractional tolerance \(r_0\) only
+if \(r_{\rm loss}(x_*,\eta)\leq r_0\).  In the nonvacuous branch this is
+equivalent to
+\begin{equation}
+ {4\sqrt{\eta x_*}-4\eta\over x_*}\leq r_0.
+ \label{eq:recovery-budget-gate}
+\end{equation}
+This inequality must be checked before a timing run.  It prevents a small
+observed body--state mismatch from being interpreted as new temporal physics
+when ordinary channel uncertainty already permits the full discrepancy.
+
+For illustration, Table~\ref{tab:recovery-budget} evaluates the certified
+worst-case loss.  These are dimensionless mathematical controls, not predicted
+experimental errors.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{cccc}
+\toprule
+Target chord \(x_*\) & Recovery error \(\eta\) & Maximum chord loss & Fractional loss\\
+\midrule
+1.00 & \(10^{-2}\) & 0.36 & 36.0\%\\
+1.00 & \(10^{-3}\) & 0.1225 & 12.25\%\\
+0.25 & \(10^{-3}\) & 0.0592 & 23.68\%\\
+0.25 & \(10^{-4}\) & 0.0196 & 7.84\%\\
+\bottomrule
+\end{tabular}
+\caption{Worst-case losses from Eq.~\eqref{eq:approx-recovery-piecewise}.
+Smaller target separations demand substantially stronger recovery
+certificates.}
+\label{tab:recovery-budget}
+\end{table}
+
+The scaling is important: at fixed \(\eta\), the relative uncertainty grows
+as the target chord decreases.  A laboratory proposal should therefore not
+begin with the smallest technically resolvable separation.  It should first
+demonstrate the common-action identity at two or more separations for which
+the recovery uncertainty is decisively subdominant, and only then test the
+downstream timing relation.
+
+\subsection{Frozen operational decision protocol}
+
+A reproducible decision can be organized without assuming the Tau conclusion:
+\begin{enumerate}[label=(P\arabic*)]
+ \item Declare the state family or operator system, the source-action
+ estimator and the allowed gauge before collecting endpoint data.
+ \item Characterize \(\mathcal C\) and either certify a recovery map or freeze
+ a coherent witness that detects departure from the commuting restriction.
+ \item Choose at least two nonzero target separations satisfying
+ Eq.~\eqref{eq:recovery-budget-gate} at the declared tolerance.
+ \item Reconstruct \(x_A\) and \(x_Q\) independently and perform an equivalence
+ test, not a failure-to-reject test, for the same-action identity.
+ \item Only after P1--P4 pass, measure \(\Delta H\) and the held-record timing
+ endpoint used in the QOR inequality.
+ \item Run dephasing, drift, detector and nonlinear-response controls under the
+ same analysis freeze.
+\end{enumerate}
+
+The corresponding verdicts are asymmetric.  Failure of P2 demotes the carrier
+scope; failure of P4 rejects finite A8b on that scope; failure of P5 rejects
+the occupied timing completion if the upstream certificates remain valid.
+Passing all steps identifies one finite carrier packet within the tested model
+class, not the complete Tau parent ontology.
 
 \section{FOC-7 occupation certificate}
 

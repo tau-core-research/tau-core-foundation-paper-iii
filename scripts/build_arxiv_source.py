@@ -4,7 +4,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "paperII_submission_source"
+SRC = ROOT / "paperIII_submission_source"
 OUT = ROOT / "arxiv_submission_source.zip"
 
 
