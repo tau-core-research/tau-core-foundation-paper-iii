@@ -77,15 +77,34 @@ def build_holonomy_figure(path):
     plt.close(fig)
 
 
+def build_foundation_series_map(path):
+    fig, ax = plt.subplots(figsize=(8.2, 3.0))
+    ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
+    box(ax, (0.03, 0.52), 0.27, 0.20, "Paper I\narchitecture + conditional completion", "#eaf4ea")
+    box(ax, (0.365, 0.52), 0.27, 0.20, "Paper II\nfinite source sufficiency + incidence", "#f3efff")
+    box(ax, (0.70, 0.52), 0.27, 0.20, "Paper III\nrecord transport + recovery", "#eaf2ff")
+    arrow(ax, (0.30, 0.62), (0.365, 0.62))
+    arrow(ax, (0.635, 0.62), (0.70, 0.62))
+    box(ax, (0.19, 0.18), 0.62, 0.15,
+        "shared open arrow: physical base--seed selection and occupation", "#f7dfdf")
+    ax.text(0.5, 0.93, "Foundation sequence and dependency direction",
+            ha="center", fontsize=11.5, fontweight="bold")
+    ax.text(0.5, 0.08, "Later papers refine sufficient internal conditions; they do not prove nature-level selection.",
+            ha="center", fontsize=7.8)
+    fig.tight_layout(); fig.savefig(path, bbox_inches="tight"); plt.close(fig)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     SRC_OUT.mkdir(parents=True, exist_ok=True)
     paths = [
         OUT / "fig_edge_branch.pdf",
         OUT / "fig_holonomy_triangle.pdf",
+        OUT / "fig_foundation_series_map.pdf",
     ]
     build_branch_figure(paths[0])
     build_holonomy_figure(paths[1])
+    build_foundation_series_map(paths[2])
     for path in paths:
         shutil.copy2(path, SRC_OUT / path.name)
     print("WROTE", *paths)

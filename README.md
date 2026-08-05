@@ -5,7 +5,9 @@
 This repository contains the reviewer-facing technical manuscript and
 reproducibility package for Tau Core Foundation Paper III.
 
-The current reviewer manuscript is 13 A4 pages.
+The current reviewer manuscript is 14 A4 pages.  Its opening series map and
+notation ledger make explicit that frozen source identification precedes
+record transport and cannot be inferred backward from recovery success.
 
 The manuscript follows the source-signature analysis of Foundation Paper II
 and distinguishes state-family, operator-system, correctable-algebra and
