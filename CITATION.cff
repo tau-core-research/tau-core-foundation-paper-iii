@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this manuscript, please cite it as below."
+title: "Complete Record Edges, Path Holonomy, and Recovery-Correctable Readouts"
+type: article
+authors:
+  - family-names: Olcsak
+    given-names: Jozsef
+year: 2026
+version: 0.1
+license: MIT

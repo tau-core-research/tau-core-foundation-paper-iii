@@ -1,0 +1,626 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
+
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=blue!50!black,urlcolor=blue!50!black}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\newcommand{\Arec}{\mathcal A_{\rm rec}}
+\newcommand{\Astar}{\mathcal A_*}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Ad}{\operatorname{Ad}}
+
+\title{\textbf{Complete Record Edges, Path Holonomy, and Recovery-Correctable Readouts}\\
+\large Tau Core Foundation Paper II}
+\author{Jozsef Olcsak\\\small Independent researcher}
+\date{Draft v0.1 --- 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate a finite technical question arising in morphological readout
+frameworks: under what conditions can a source-side action separation be
+identified exactly with an observer-carrier Uhlmann chord?  A reversible
+\emph{complete record edge} is defined as a source-owned, trace- and
+dagger-preserving relation between occupied finite record algebras, equipped
+with one common action unit and no terminal bypass.  Primitive-defect
+extensivity then forces an exact Trace--Gram law on the supported endpoint
+pair.  Composable complete edges form a groupoid, but endpoint-only descent is
+valid only when relative holonomy is null under a source-frozen operational
+descriptor or belongs to a declared Uhlmann gauge.
+
+We then separate this reversible theorem from irreversible record formation.
+A three-qubit bit-flip construction gives an explicit non-isomorphic CPTP map
+with an exact recovery on its occupied logical operator system.  Monotonicity
+in both directions proves preservation of fidelity and hence of the Uhlmann
+chord on that system.  By contrast, commuting records alone cannot distinguish
+reversible transport from dephasing.  This yields a seven-part occupation
+certificate that adds either a coherent off-diagonal witness or a certified
+recovery test to independent action, tomography, and timing measurements.
+For nonexact recovery we derive an explicit Uhlmann-chord loss bound from a
+uniform trace-norm error, and hence from a full-code diamond-norm certificate.
+The results are representation and identifiability theorems.  They do not
+prove that a physical parent source creates or occupies complete edges, that a
+laboratory carrier realizes the proposed common-action law, or that Tau Core
+is empirically validated.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Question and claim boundary}
+
+Let a stabilized source/body construction assign a dimensionless finite
+action separation
+\begin{equation}
+ x_A={\mathcal X_s\over\Astar},
+ \label{eq:action-separation}
+\end{equation}
+while an observer carrier assigns density operators \(\rho_u,\rho_v\) and the
+minimum-lift Uhlmann chord
+\begin{equation}
+ x_Q=d_{U,\mathrm{chord}}^2(\rho_u,\rho_v)
+ =\min_U\lVert W_v-W_uU\rVert_{\HS}^2
+ =2\bigl(1-\sqrt{F(\rho_u,\rho_v)}\bigr).
+ \label{eq:quantum-separation}
+\end{equation}
+The target identity is \(x_A=x_Q\).  Equality of infinitesimal Hessians is not
+enough: a finite response can have the same tangent metric but differ by
+nonlinear terms.  This paper therefore asks which \emph{finite source
+relations} are sufficient for the identity, and how this statement changes
+for irreversible completely positive (CP) maps.
+
+The status is deliberately narrow:
+\begin{itemize}
+ \item complete-edge existence is an assumption about an occupied source
+ relation, not a theorem about Nature;
+ \item the Trace--Gram result is exact only on the declared occupied support;
+ \item descriptor-null holonomy is operational and claim-relative, not an
+ ontological erasure rule;
+ \item the CP example is a recovery-correctable toy model, not an identified
+ physical Tau carrier;
+ \item no numerical constant, Standard-Model spectrum, or empirical anomaly is
+ derived here.
+\end{itemize}
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.93\linewidth]{figures/fig_edge_branch.pdf}
+ \caption{The finite physical fork.  Exact Trace--Gram transport follows on a
+ reversible complete edge.  An irreversible CP relation requires a recovery
+ theorem; otherwise contraction or an additional finite defect remains.}
+ \label{fig:finite-fork}
+\end{figure}
+
+\section{Finite record packet}
+
+Let the occupied record support decompose into finitely many central blocks,
+\begin{equation}
+ \mathcal A_Q=\bigoplus_{\alpha=1}^m M_{n_\alpha}(\mathbb C),
+ \qquad
+ \tau(a)=\sum_\alpha p_\alpha\,{\Tr(a_\alpha)\over n_\alpha},
+ \quad p_\alpha>0,
+ \quad \sum_\alpha p_\alpha=1.
+ \label{eq:finite-record-algebra}
+\end{equation}
+We assume a finite special dagger-Frobenius packet
+\((\mathcal A_Q,\mu,\eta,\Delta=\mu^\dagger,\epsilon=\eta^\dagger)\) with
+\begin{equation}
+ \mu\Delta=I_{\mathcal A_Q}.
+ \label{eq:specialness}
+\end{equation}
+Specialness makes the primitive copy map isometric in the inherited trace
+metric.  It is a strong normalization condition; a merely normalizable
+Frobenius algebra has \(\mu\Delta=L\) for a positive central loop operator
+\(L\), leaving a possible block-dependent scale.
+
+\begin{definition}[Finite recovery completeness]
+A source law is \emph{finite recovery-complete} on an occupied family when
+its finite action separation depends only on the source-owned minimum-lift
+chord,
+\begin{equation}
+ x_A=F(x_Q),\qquad F(0)=0,
+ \label{eq:finite-recovery-completeness}
+\end{equation}
+and no additional positive stiffness remains on the declared source support
+while being invisible to that lift.  This is a sufficient-statistic
+assumption for finite action separation, not a consequence of a positive
+local Hessian alone.
+\end{definition}
+
+The admissible domain for exact extensivity is
+\begin{equation}
+ \mathcal D_2=\{(Y_1,Y_2):Y_i\geq0,\;Y_1+Y_2\leq2,\;
+ Y_1,Y_2\text{ arise from admitted orthogonal source slots}\}.
+ \label{eq:additive-domain}
+\end{equation}
+The upper bound follows from the squared chord convention.  Extensivity means
+\begin{equation}
+ F(Y_1+Y_2)=F(Y_1)+F(Y_2),\qquad (Y_1,Y_2)\in\mathcal D_2,
+ \label{eq:primitive-extensivity}
+\end{equation}
+with one universal continuous \(F\) on the connected occupied orbit.  Merely
+assigning separate functions \(F_\alpha\) to blocks would not imply a common
+finite law.
+
+\begin{lemma}[Trace--Gram response on the admissible domain]
+If Eq.~\eqref{eq:finite-recovery-completeness} is continuous, has local unit
+\(F'(0)=1\), and satisfies Eq.~\eqref{eq:primitive-extensivity} on a connected
+admissible interval, then \(F(Y)=Y\) throughout that interval.
+\end{lemma}
+\begin{proof}
+The restricted Cauchy equation gives rational homogeneity on every admissible
+subinterval.  Continuity extends it to real arguments.  Hence \(F(Y)=cY\),
+and \(F'(0)=1\) fixes \(c=1\).
+\end{proof}
+
+The assumptions are material.  The family
+\begin{equation}
+ F_\lambda(Y)=Y+\lambda Y^2
+ \label{eq:nonlinear-countermodel}
+\end{equation}
+has the same local unit but composition defect
+\begin{equation}
+ F_\lambda(Y_1+Y_2)-F_\lambda(Y_1)-F_\lambda(Y_2)
+ =2\lambda Y_1Y_2.
+ \label{eq:nonlinear-defect}
+\end{equation}
+Thus local metric agreement does not establish finite A8b.
+
+\section{Complete source-owned record edges}
+
+\begin{definition}[Complete record edge]
+Let \(u,v\) be occupied fibers with finite special dagger-Frobenius record
+algebras \((\mathcal A_{Q,u},\tau_u)\) and
+\((\mathcal A_{Q,v},\tau_v)\).  A source relation \(e:u\to v\) is a complete
+record edge on a declared support when its realization:
+\begin{enumerate}[label=(E\arabic*)]
+ \item is an invertible multiplication-, unit- and dagger-intertwiner;
+ \item preserves the inherited metric, faithful trace and common action unit;
+ \item transports the full declared endpoint record pair;
+ \item is source-owned and contains no terminal-only bypass copy; and
+ \item belongs to the same primitive-extensive occupied edge orbit.
+\end{enumerate}
+This definition characterizes sufficient structure.  It does not derive edge
+existence or invertibility.
+\end{definition}
+
+\begin{proposition}[Exact finite identity on a complete edge]
+On a finite recovery-complete, primitive-extensive packet, every occupied
+complete edge restricts to a faithful trace-preserving \(*\)-isomorphism
+\begin{equation}
+ \Pi_e:\mathcal A_{Q,u}\to\mathcal A_{Q,v},\qquad
+ \tau_v(\Pi_e(a))=\tau_u(a),
+ \label{eq:trace-preserving-isomorphism}
+\end{equation}
+whose standard-form lift is isometric.  For its supported endpoint pair,
+\begin{equation}
+ \boxed{{\mathcal X_s(e)\over\Astar}
+ =\min_U\lVert W_v-W_uU\rVert_{\HS}^2
+ =d_{U,\mathrm{chord}}^2(\rho_u,\rho_v).}
+ \label{eq:complete-edge-a8b}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The algebraic intertwiners and invertibility give a faithful
+\(*\)-isomorphism.  Metric and common-unit transport exclude a rescaled trace.
+Therefore
+\begin{align}
+ \langle L^2(\Pi_e)a,L^2(\Pi_e)b\rangle_v
+ &=\tau_v\!\left(\Pi_e(a)^\dagger\Pi_e(b)\right)\\
+ &=\tau_v\!\left(\Pi_e(a^\dagger b)\right)
+ =\tau_u(a^\dagger b),
+\end{align}
+so the standard-form lift is isometric.  Source ownership places the
+amplitude residual in the once-counted primitive defect ledger.  Finite
+recovery completeness and the previous lemma then force \(x_A=x_Q\).
+\end{proof}
+
+A rescaled trace, a terminal-only amplitude copy, or the nonlinear response
+\eqref{eq:nonlinear-countermodel} violates a distinct hypothesis.  The theorem
+therefore packages a strong but auditable sufficient realization rather than
+showing that every stable record process has this form.
+
+\section{Operational descriptor completeness}
+
+Holonomy cannot be declared null by inspecting density matrices alone.  The
+descriptor must be fixed before paths are compared.
+
+\begin{definition}[Claim-complete operational descriptor]
+For an occupied fiber \(u\), a descriptor protocol
+\(\mathfrak D_u^{(C)}\) is complete relative to claim \(C\) when it freezes:
+\begin{enumerate}[label=(D\arabic*)]
+ \item the occupied operator system \(\mathcal S_{\rm occ}\);
+ \item an informationally complete effect frame on that system, or an explicit
+ restricted-observable label;
+ \item estimators for the retained action and metric data;
+ \item every typed terminal and calibration used by \(C\);
+ \item the admitted gauge subgroup and path family;
+ \item equivalence margins \(\delta_j\), confidence level and multiple-test
+ correction.
+\end{enumerate}
+For two path outputs \(x_p,x_q\), descriptor-nullity is accepted only by a
+predeclared equivalence test,
+\begin{equation}
+ \mathrm{CI}_{1-\alpha}\bigl[D_j(x_p)-D_j(x_q)\bigr]
+ \subseteq[-\delta_j,\delta_j]
+ \quad\text{for every frozen component }j.
+ \label{eq:operational-null}
+\end{equation}
+Failure to reject equality is not evidence of nullity.  Completeness here is
+claim-relative and never means access to all parent information.
+\end{definition}
+
+If the effect frame is informationally complete on
+\(\mathcal S_{\rm occ}\), equality of all ideal probabilities identifies the
+state on that system.  Finite data replace equality by
+Eq.~\eqref{eq:operational-null}.  A central automorphism is not automatically
+gauge: block permutations, weights and typed roles remain physical whenever
+the frozen descriptor detects them.
+
+\section{Paths and holonomy}
+
+Composable complete edges form a groupoid \(\mathcal G_{\rm rec}\).  A path
+\(p=e_n\circ\cdots\circ e_1:u\to v\) induces
+\(\Pi_p=\Pi_{e_n}\circ\cdots\circ\Pi_{e_1}\).  For two paths \(p,q:u\to v\),
+define relative holonomy
+\begin{equation}
+ H_{p,q}=\Pi_q^{-1}\Pi_p.
+ \label{eq:relative-holonomy}
+\end{equation}
+
+\begin{corollary}[Pathwise identity and endpoint descent]
+Every complete path obeys Eq.~\eqref{eq:complete-edge-a8b} pathwise.  An
+endpoint-only law descends on a declared occupied family exactly when
+\(H_{p,q}\) belongs to the frozen Uhlmann gauge or is null under the
+claim-complete descriptor.  Otherwise the path class is retained physical
+data.
+\end{corollary}
+\begin{proof}
+Faithful trace-preserving \(*\)-isomorphisms are closed under composition and
+inversion.  Right-unitary Uhlmann gauge leaves \(WW^\dagger\) and the minimized
+chord invariant.  Any descriptor-visible relative automorphism distinguishes
+the two transported records and cannot consistently be quotiented.
+\end{proof}
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.78\linewidth]{figures/fig_holonomy_triangle.pdf}
+ \caption{A three-vertex control.  The same relative automorphism is null on a
+ diagonal record family but visible once a coherent \(X\)-basis witness is
+ frozen into the endpoint descriptor.}
+ \label{fig:holonomy-control}
+\end{figure}
+
+For a concrete control, take three fibers carrying \(M_2(\mathbb C)\), with
+normalized trace, and edges
+\begin{equation}
+ \Pi_e=\Ad_X:u\to v,\qquad
+ \Pi_f=\Ad_X:v\to w,\qquad
+ \Pi_g=\Ad_Z:u\to w.
+\end{equation}
+For \(p=f\circ e\) and \(q=g\), \(\Pi_p=\id\) while
+\(H_{p,q}=\Ad_Z\).  On diagonal densities and effects this holonomy is null.
+If \(|+\rangle\langle+|\) and an \(X\)-basis effect are frozen into the
+descriptor, \(\Ad_Z\) maps \(|+\rangle\) to \(|-\rangle\) and becomes visible.
+The null decision therefore belongs to the predeclared operational claim, not
+to an analyst's post-hoc choice.
+
+\section{Irreversible CP relations}
+
+A generic detector, decohering evolution or rank-reducing instrument is not a
+complete edge.  If \(\mathcal C\) is CPTP, fidelity monotonicity gives
+\begin{equation}
+ F(\mathcal C(\rho),\mathcal C(\sigma))\geq F(\rho,\sigma),
+ \qquad
+ d_U^2(\mathcal C(\rho),\mathcal C(\sigma))
+ \leq d_U^2(\rho,\sigma).
+ \label{eq:cp-contraction}
+\end{equation}
+Exact finite A8b can therefore be lost.  It is restored on an occupied
+domain if the map is exactly recoverable there.  The domain must be typed:
+
+\begin{definition}[Recovery domains]
+Let \(P\mathcal H\) be a code subspace.  We distinguish:
+\begin{enumerate}[label=(R\arabic*)]
+ \item a state family \(\mathfrak S\subseteq\mathsf D(P\mathcal H)\);
+ \item a unital self-adjoint linear operator system
+ \(\mathcal S_{\rm op}\subseteq\mathcal B(P\mathcal H)\);
+ \item a correctable unital \(*\)-subalgebra
+ \(\mathcal A_{\rm corr}\subseteq\mathcal B(P\mathcal H)\); and
+ \item the full code algebra \(\mathcal B(P\mathcal H)\).
+\end{enumerate}
+State-family recovery means equality only on \(\mathfrak S\).  Operator-system
+recovery means equality of the linear maps on \(\mathcal S_{\rm op}\).
+Algebra recovery preserves all states and observables encoded by
+\(\mathcal A_{\rm corr}\).  Full-code recovery is the special case
+\(\mathcal A_{\rm corr}=\mathcal B(P\mathcal H)\).  None of these scopes may be
+silently enlarged after the test.
+\end{definition}
+
+\begin{proposition}[Recovery sandwich]
+Let \(\mathcal C\) and \(\mathcal R\) be CPTP maps satisfying
+\begin{equation}
+ (\mathcal R\circ\mathcal C)(\rho)=\rho
+ \label{eq:exact-recovery}
+\end{equation}
+for every state in a frozen family \(\mathfrak S\).  Then for every pair
+\(\rho,\sigma\in\mathfrak S\),
+\begin{equation}
+ F(\mathcal C(\rho),\mathcal C(\sigma))=F(\rho,\sigma),
+ \qquad
+ d_U^2(\mathcal C(\rho),\mathcal C(\sigma))=d_U^2(\rho,\sigma).
+ \label{eq:recovery-isometry}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Monotonicity under \(\mathcal C\) gives one inequality.  Applying monotonicity
+under \(\mathcal R\) and using Eq.~\eqref{eq:exact-recovery} gives the reverse
+inequality.  Equality of fidelity implies equality of the chord convention in
+Eq.~\eqref{eq:quantum-separation}.
+\end{proof}
+
+This statement is closely related to quantum error-correction conditions
+\cite{KnillLaflamme1997} and to the broader sufficiency/recovery viewpoint
+\cite{Petz1986}, but only the explicit recovery identity is needed below.
+
+\begin{proposition}[Explicit approximate-recovery chord bound]
+Let \(\mathfrak S\) be a frozen state family and suppose
+\begin{equation}
+ \sup_{\rho\in\mathfrak S}
+ \lVert(\mathcal R\mathcal C)(\rho)-\rho\rVert_1\leq\eta.
+ \label{eq:state-family-recovery-error}
+\end{equation}
+This follows, in particular, from
+\(\lVert\mathcal R\mathcal C-\id\rVert_\diamond\leq\eta\) on the full code
+algebra.  For \(\rho,\sigma\in\mathfrak S\), define
+\begin{equation}
+ x_{\rm in}=d_U^2(\rho,\sigma),\qquad
+ x_{\rm out}=d_U^2(\mathcal C\rho,\mathcal C\sigma).
+\end{equation}
+Then
+\begin{equation}
+ 0\leq x_{\rm in}-x_{\rm out}
+ \leq x_{\rm in}-
+ \left[\max\{0,\sqrt{x_{\rm in}}-2\sqrt\eta\}\right]^2.
+ \label{eq:approx-recovery-chord-bound}
+\end{equation}
+Equivalently,
+\begin{equation}
+ x_{\rm in}-x_{\rm out}
+ \leq
+ \begin{cases}
+ x_{\rm in},&x_{\rm in}\leq4\eta,\\
+ 4\sqrt{\eta x_{\rm in}}-4\eta,&x_{\rm in}>4\eta.
+ \end{cases}
+ \label{eq:approx-recovery-piecewise}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Write \(d(\rho,\sigma)=\sqrt{d_U^2(\rho,\sigma)}\), the Bures chord metric.
+The Fuchs--van de Graaf inequality \cite{FuchsVandeGraaf1999} gives
+\begin{equation}
+ d\bigl(\rho,\mathcal R\mathcal C\rho\bigr)^2
+ =2\bigl(1-\sqrt{F(\rho,\mathcal R\mathcal C\rho)}\bigr)
+ \leq\lVert\rho-\mathcal R\mathcal C\rho\rVert_1\leq\eta,
+\end{equation}
+and likewise for \(\sigma\).  The triangle inequality and contractivity under
+\(\mathcal R\) imply
+\begin{equation}
+ \sqrt{x_{\rm in}}
+ \leq\sqrt{x_{\rm out}}+2\sqrt\eta.
+\end{equation}
+Contractivity under \(\mathcal C\) also gives
+\(x_{\rm out}\leq x_{\rm in}\).  Solving these two inequalities for
+\(x_{\rm out}\) yields Eqs.~\eqref{eq:approx-recovery-chord-bound} and
+\eqref{eq:approx-recovery-piecewise}.
+\end{proof}
+
+The bound is useful only relative to the frozen domain.  It becomes weak when
+\(x_{\rm in}\lesssim4\eta\), precisely where recovery error can hide the full
+input separation.  It still concerns only the Uhlmann side; it does not make
+the once-counted source action equal to either chord.
+
+The estimate is exact in the limit \(\eta=0\) and becomes vacuous in the first
+branch when \(x_{\rm in}\leq4\eta\).  It is a uniform worst-case consequence of
+trace-norm recovery plus metric contractivity; no claim of universal
+optimality is made for a specified channel, code, or state pair.  A smaller
+state-dependent error may give a sharper bound, but it must be certified on
+the same predeclared state family.  A diamond-norm certificate applies to the
+full code including reference systems, whereas the state-family hypothesis in
+Eq.~\eqref{eq:state-family-recovery-error} must not be silently promoted to
+that stronger scope.
+
+\section{A recovery-correctable CP toy model}
+
+Let \(\mathcal H_L=\mathbb C^2\),
+\(\mathcal H_P=(\mathbb C^2)^{\otimes3}\), and define the encoding isometry
+\begin{equation}
+ V|0\rangle=|000\rangle,\qquad V|1\rangle=|111\rangle.
+ \label{eq:bitflip-encoding}
+\end{equation}
+Let \(X_i\) flip physical qubit \(i\), \(P_0=VV^\dagger\), and
+\(P_i=X_iP_0X_i\).  These four syndrome subspaces are mutually orthogonal.
+For \(0\leq p\leq1\), define
+\begin{equation}
+ \mathcal C_p(\rho)
+ =(1-p)V\rho V^\dagger+{p\over3}\sum_{i=1}^3X_iV\rho V^\dagger X_i.
+ \label{eq:bitflip-channel}
+\end{equation}
+This is CPTP and, for \(0<p<1\), is not a \(*\)-isomorphism from the logical
+matrix algebra onto its noisy image.
+
+Define a decoder by syndrome measurement and correction,
+\begin{equation}
+ \mathcal R_{\rm dec}(\sigma)=
+ V^\dagger\!\left[P_0\sigma P_0+
+ \sum_{i=1}^3X_iP_i\sigma P_iX_i\right]V
+ +\Tr(P_{\rm fail}\sigma)|0\rangle\langle0|,
+ \label{eq:bitflip-recovery}
+\end{equation}
+where \(P_{\rm fail}=I-P_0-\sum_iP_i\) makes the map trace preserving outside
+the occupied range.
+
+\begin{proposition}[Exact recovery-correctable non-isomorphic edge]
+For every logical state \(\rho\),
+\begin{equation}
+ \mathcal R_{\rm dec}\circ\mathcal C_p(\rho)=\rho.
+ \label{eq:toy-recovery-identity}
+\end{equation}
+Consequently Eq.~\eqref{eq:recovery-isometry} holds for all logical state
+pairs and all \(p\in[0,1]\).
+\end{proposition}
+\begin{proof}
+Each summand of Eq.~\eqref{eq:bitflip-channel} lies in one orthogonal syndrome
+subspace.  The corresponding term in Eq.~\eqref{eq:bitflip-recovery} projects
+onto that subspace, applies the matching correction, and decodes with \(V^\dagger\).
+Every branch therefore returns its probability weight times \(\rho\); the
+weights sum to one.  The recovery-sandwich proposition gives fidelity and
+chord equality.
+\end{proof}
+
+The toy model recovers the full logical algebra
+\(\mathcal B(\mathcal H_L)=M_2(\mathbb C)\), not merely a commuting state
+family.  It proves that invertibility of the physical CP map is unnecessary
+for exact finite metric transport on a certified code.  It does not show that
+the body action assigns the same \(x_A\), nor that this code is a physical Tau
+carrier.
+
+\section{Why commuting records are insufficient}
+
+Let \(\mathcal D\subset M_2(\mathbb C)\) be the diagonal algebra and compare
+\begin{equation}
+ \Pi_{\rm rev}=\id,
+ \qquad
+ \Pi_{\rm irr}(a)=P_0aP_0+P_1aP_1.
+ \label{eq:dephasing-control}
+\end{equation}
+Both maps agree on every diagonal density and diagonal effect.  Yet
+\(\Pi_{\rm irr}\) destroys off-diagonal coherence and has no CPTP inverse on
+the full matrix algebra.
+
+\begin{proposition}[Commuting-record reversibility no-go]
+No protocol restricted to the commuting record algebra \(\mathcal D\) can
+identify whether the occupied process is \(\Pi_{\rm rev}\) or
+\(\Pi_{\rm irr}\).  Reversibility requires either a coherent witness outside
+\(\mathcal D\) or a certified recovery test on a larger predeclared operator
+system.
+\end{proposition}
+\begin{proof}
+The two channels induce identical probabilities for every state and effect in
+\(\mathcal D\).  Therefore every experiment confined to that algebra has the
+same likelihood under both hypotheses.  An off-diagonal state/effect or a
+recovery test separates them.
+\end{proof}
+
+\section{FOC-7 occupation certificate}
+
+The preceding no-go upgrades the finite occupation certificate.  A candidate
+carrier passes \emph{FOC-7} only if one predeclared protocol establishes:
+\begin{enumerate}[label=(F\arabic*)]
+ \item a metastable, held, single-shot record with a frozen discrimination
+ error;
+ \item independent source-side reconstruction of \(x_A\), without tomography
+ or timing data;
+ \item independent tomographic reconstruction of \(x_Q\);
+ \item \(x_A=x_Q\) within predeclared equivalence margins at at least two
+ nonzero separations;
+ \item either a coherent off-diagonal witness distinguishing the complete
+ operator system from its commuting restriction, or a certified recovery map
+ satisfying \(\lVert\mathcal R\mathcal C-\id\rVert_\diamond\leq\eta_{\rm rec}\)
+ on that system;
+ \item downstream timing with independently measured energy spread; and
+ \item controls for decoherence, drift, detector response and nonlinear finite
+ corrections.
+\end{enumerate}
+Passing FOC-7 would identify the tested finite packet within its frozen model
+class.  It would not by itself prove the entire parent ontology.  Failure at
+F5 specifically prevents commuting data from being promoted into evidence for
+a reversible complete edge.
+
+\section{What remains open}
+
+The internal mathematics now distinguishes three cases:
+\begin{equation}
+ \begin{array}{ccl}
+ \text{complete reversible edge}&\Rightarrow&\text{exact finite Trace--Gram},\\
+ \text{recovery-correctable CP edge}&\Rightarrow&\text{exact chord on the code},\\
+ \text{generic irreversible CP edge}&\Rightarrow&\text{contraction or extra defect}.
+ \end{array}
+ \label{eq:three-case-fork}
+\end{equation}
+The decisive physical question is not settled by these implications:
+\begin{quote}
+Does the physical base--seed source create and occupy either the complete
+dagger-Frobenius edge packet or a recovery-correctable non-isomorphic packet,
+and does its once-counted action assign the same finite separation as the
+observer amplitude geometry?
+\end{quote}
+
+The represented normalized trace is canonical after a representation is
+fixed, but its central weights are still physical input.  Exact extensivity
+excludes interactions between admitted primitive defect slots and is likewise
+a strong source law.  Finite recovery completeness says that the chord is a
+sufficient statistic for the action separation.  These assumptions are now
+explicit and separately falsifiable; they are not smuggled in as consequences
+of local Hessian positivity.
+
+Equation~\eqref{eq:approx-recovery-chord-bound} controls approximate recovery
+on the frozen state family.  It is not an exact A8b theorem: the finite source
+action remains independent, and experiment-specific promotion still requires
+a declared code, error model and reconstruction uncertainty.
+
+\section{Conclusion}
+
+Complete source-owned record edges provide a concise sufficient theorem for
+finite action--Uhlmann identity, while path holonomy states exactly when that
+identity can descend to endpoint-only data.  The operational descriptor makes
+the null decision testable and prevents post-hoc removal of visible path
+information.
+
+Irreversibility does not end the route: the three-qubit construction proves
+that a non-isomorphic CP map can preserve the Uhlmann chord on a certified
+recoverable code.  But commuting record agreement is insufficient to decide
+between this structure, a reversible edge, and dephasing.  FOC-7 therefore
+requires coherent or recovery evidence in addition to action, tomography and
+timing measurements.
+
+The paper closes the internal finite alternatives, not their nature-level
+selection.  Physical source occupation, common-action ownership and a
+laboratory carrier remain open empirical and source-theoretic problems.
+
+\appendix
+\section{Fidelity convention}
+
+We use squared Uhlmann fidelity
+\begin{equation}
+ F(\rho,\sigma)=\left[\Tr\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\right]^2.
+\end{equation}
+The minimum Hilbert--Schmidt purification chord is
+\begin{equation}
+ \min_U\lVert W_\rho-W_\sigma U\rVert_{\HS}^2
+ =2(1-\sqrt F),
+\end{equation}
+following Uhlmann's purification geometry \cite{Uhlmann1976}.  This is not the
+squared Bures distance convention used in every part of the literature; all
+equalities in this paper use the displayed definition.
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}

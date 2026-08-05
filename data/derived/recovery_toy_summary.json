@@ -1,0 +1,10 @@
+{
+  "logical_dimension": 2,
+  "physical_dimension": 8,
+  "codewords": ["000", "111"],
+  "error_set": ["I", "X1", "X2", "X3"],
+  "noise_parameter_domain": "0 <= p <= 1",
+  "recovery_identity": "R_dec o C_p = id_logical",
+  "fidelity_result": "F(C_p(rho), C_p(sigma)) = F(rho, sigma)",
+  "claim_boundary": "toy recovery-correctable CP construction; not physical Tau carrier occupation"
+}
