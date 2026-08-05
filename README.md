@@ -16,6 +16,12 @@ an explicit Uhlmann-chord loss bound from a trace-norm or diamond-norm error
 certificate. The finite body-action identification remains a separate open
 Tau-specific input.
 
+A later enriched-source backport sharpens that boundary. On the adopted
+primary ROOT branch, a traced two-leg source, the canonical represented trace
+and the primitive-extensive finite Trace--Gram law are conditionally
+constructed. Physical occupation of that branch, a laboratory carrier and
+selection over the same-reduct alternative remain open.
+
 The paper isolates the finite record-transport layer that was too detailed for
 Foundation Paper I. It proves conditional internal results for:
 

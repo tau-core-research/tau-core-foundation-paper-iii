@@ -33,6 +33,8 @@ def test_claim_boundaries_and_results():
         "Exact recovery-correctable non-isomorphic edge",
         "Commuting-record reversibility no-go",
         "FOC-7 occupation certificate",
+        "Later enriched-source status",
+        "primitive-extensive finite Trace--Gram law",
     ]:
         assert marker in text
     assert "do not prove that a physical parent source creates or occupies complete edges" in normalized
