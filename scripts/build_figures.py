@@ -78,18 +78,22 @@ def build_holonomy_figure(path):
 
 
 def build_foundation_series_map(path):
-    fig, ax = plt.subplots(figsize=(8.2, 3.0))
+    fig, ax = plt.subplots(figsize=(8.2, 4.2))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
-    box(ax, (0.03, 0.52), 0.27, 0.20, "Paper I\narchitecture + conditional completion", "#eaf4ea")
-    box(ax, (0.365, 0.52), 0.27, 0.20, "Paper II\nfinite source sufficiency + incidence", "#f3efff")
-    box(ax, (0.70, 0.52), 0.27, 0.20, "Paper III\nrecord transport + recovery", "#eaf2ff")
-    arrow(ax, (0.30, 0.62), (0.365, 0.62))
-    arrow(ax, (0.635, 0.62), (0.70, 0.62))
-    box(ax, (0.19, 0.18), 0.62, 0.15,
+    box(ax, (0.02, 0.64), 0.25, 0.16, "Paper I\narchitecture +\nconditional completion", "#eaf4ea")
+    box(ax, (0.375, 0.64), 0.25, 0.16, "Paper II\nfinite source sufficiency\n+ incidence", "#f3efff")
+    box(ax, (0.73, 0.64), 0.25, 0.16, "Paper III\nrecord transport\n+ recovery", "#eaf2ff")
+    arrow(ax, (0.27, 0.72), (0.375, 0.72))
+    arrow(ax, (0.625, 0.72), (0.73, 0.72))
+    box(ax, (0.16, 0.35), 0.30, 0.16, "Paper IV\nparent-law realization", "#fff1dc")
+    box(ax, (0.54, 0.35), 0.30, 0.16, "Paper V\ntemporal descent", "#eef5ff")
+    arrow(ax, (0.855, 0.64), (0.31, 0.51))
+    arrow(ax, (0.46, 0.43), (0.54, 0.43))
+    box(ax, (0.19, 0.10), 0.62, 0.12,
         "shared open arrow: physical base--seed selection and occupation", "#f7dfdf")
     ax.text(0.5, 0.93, "Foundation sequence and dependency direction",
             ha="center", fontsize=11.5, fontweight="bold")
-    ax.text(0.5, 0.08, "Later papers refine sufficient internal conditions; they do not prove nature-level selection.",
+    ax.text(0.5, 0.03, "The five papers refine conditional structure; they do not prove unrestricted parent-law realization.",
             ha="center", fontsize=7.8)
     fig.tight_layout(); fig.savefig(path, bbox_inches="tight"); plt.close(fig)
 

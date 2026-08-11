@@ -24,7 +24,7 @@ def test_claim_boundaries_and_results():
     text = TEX.read_text()
     normalized = " ".join(text.split())
     for marker in [
-        "Foundation Paper III",
+        "Technical Paper II (Series Paper III)",
         "Exact finite identity on a complete edge",
         "Claim-complete operational descriptor",
         "Recovery sandwich",

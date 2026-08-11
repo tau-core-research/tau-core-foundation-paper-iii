@@ -24,7 +24,8 @@ packets.
 ## Not Proven
 
 - Physical creation or occupation of complete edges.
-- Physical selection of the special dagger-Frobenius normalization, represented
+- Unrestricted parent-law realization and physical occupation of the special
+  dagger-Frobenius normalization, represented
   central trace weights, exact extensivity, or finite recovery completeness.
 - A laboratory Tau carrier or a passed FOC-7 certificate.
 - A physically identified recovery map and experimental error budget
@@ -34,4 +35,5 @@ packets.
 
 The strongest assumptions are finite recovery completeness, exact primitive
 extensivity, the common action unit, and physical occupation. The manuscript
-states each as an assumption or test target rather than a theorem of Nature.
+states each as an assumption or test target rather than a theorem of
+unrestricted physical realization.
