@@ -28,7 +28,15 @@ do not certify complete-edge invertibility, exact recovery, a laboratory
 carrier, or selection over unrestricted rank-novel parent alternatives.
 
 The paper isolates the finite record-transport layer that was too detailed for
-Foundation Paper I. It proves conditional internal results for:
+Foundation Paper I.
+
+## Observer Co-Descent
+
+Record edges operate inside the inherited observer co-descent architecture.
+The observer is not a detached endpoint: occupied carrier support, regular
+local rank four, stable quantization and a nonzero record/effect jointly make
+it operational and co-produce its accessible 4D world. Transport success does
+not create the body or an independent channel layer.
 
 ## Atemporal Parent-Realization Terminology
 
@@ -48,6 +56,7 @@ terminal readouts also cannot establish ambient-source exhaustivity. The
 current terminology is therefore **parent-law realization** and **physical
 occupation**.
 
+## Results
 
 - reversible complete source-owned record edges;
 - exact finite Trace--Gram transport on their occupied support;
