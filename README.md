@@ -100,6 +100,13 @@ cannot itself carry a smooth optical connection. An enriched body-holonomy or
 varying-projector path packet is sufficient only conditionally and may not be
 reconstructed backward from terminal transfer data.
 
+The same theorem now has a separately typed braid-statistics specialization.
+On an independently established two-dimensional collision-free effective
+support, a flat occupied channel connection yields anyon readout precisely
+when its braid-group holonomy survives the frozen terminal descriptor. The
+paper does not infer that support, connection, representation or occupation
+from path multiplicity, a rank-two projector, or the Tau seed-word exchange.
+
 The paper now places record transport explicitly inside the common law
 `Y_O^(a)=Q_O^(a) o T^(a) o A_O[M_tau]`: record formation is the finite
 resolution/acceptance stage after morphology-conditioned observer access and
