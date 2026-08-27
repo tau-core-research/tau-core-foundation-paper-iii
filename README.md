@@ -7,7 +7,7 @@
 This repository contains the reviewer-facing technical manuscript and
 reproducibility package for Tau Core Technical Paper II (series Paper III).
 
-The current reviewer manuscript is 17 A4 pages.  Its opening series map and
+The current reviewer manuscript is 18 A4 pages.  Its opening series map and
 notation ledger make explicit that frozen source identification precedes
 record transport and cannot be inferred backward from recovery success.
 
@@ -139,3 +139,11 @@ runs the public tests.
 - `paperIII_submission_source/main.pdf`
 - `arxiv_submission_source.zip`
 - `data/derived/recovery_toy_summary.json`
+
+## Unified Selection Update (2026-08-27)
+
+The complete-edge transport of this paper can instantiate one premise of
+`PD-USS1`, but recovery or holonomy does not derive the spectral grading or
+actuality law. The updated `0/31` census is an acquisition result, not evidence
+for physical edge occupation; all recovery and braid-holonomy results are
+unchanged.
