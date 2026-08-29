@@ -27,7 +27,7 @@
 \title{\textbf{Complete Record Edges, Path Holonomy, and Recovery-Correctable Readouts}\\
 \large Tau Core Technical Paper II (Series Paper III)}
 \author{Jozsef Olcsak\\\small Independent researcher}
-\date{Draft v0.1 --- Last revised: 27 August 2026}
+\date{Draft v0.1 --- Last revised: 29 August 2026}
 
 \begin{document}
 \maketitle
@@ -141,6 +141,17 @@ accessible four-dimensional world as co-readouts.  A chart or carrier alone
 is insufficient.  Complete edges and recovery maps studied here transport
 records inside that inherited architecture; they neither create the body nor
 constitute an independent channel layer.
+
+The record algebra also does not create the differentiable carrier on which
+its records are later read.  A possible post-body representation may contain
+an observer-independent derivation family $\mathfrak d_\tau$, an
+observer--source restriction $R^{\mathfrak d}_{OS}$ and the visible map
+$\Phi_{OS,x}=\widetilde\Phi_{OS,x}\circ R^{\mathfrak d}_{OS}$.  Complete
+edges can transport records once such a packet is supplied, but their
+existence does not force constant visible rank four, integrability, a
+Lorentz-conformal realization, or agreement with the ROOT/M4TR carrier.
+Those are upstream geometry gates, and endpoint recovery may not be used to
+select them backward.
 
 Paper II's joint-source compression is also inherited: the mixed relation
 ideal, separator multiplicity/gluing data and faithful block occupation are
@@ -984,6 +995,56 @@ Passing FOC-7 would identify the tested finite packet within its frozen model
 class.  It would not by itself prove the entire parent ontology.  Failure at
 F5 specifically prevents commuting data from being promoted into evidence for
 a reversible complete edge.
+
+\section{Projective loop invariants and the curvature boundary}
+
+A conditional GNS/Gram packet sharpens the phase side of the present theory.
+Write a nonzero overlap as $G_{ab}=r_{ab}U_{ab}$ with
+$U_{ab}=e^{i\theta_{ab}}$.  Under local ray rephasing,
+$|\chi_a\rangle\mapsto e^{i\alpha_a}|\chi_a\rangle$, one has
+\begin{equation}
+ U_{ab}\mapsto e^{-i\alpha_a}U_{ab}e^{i\alpha_b}.
+\end{equation}
+For a closed supported loop $\gamma=(a_1\ldots a_k a_1)$, the Bargmann
+product and its phase,
+\begin{equation}
+ B_\gamma=\prod_{j=1}^{k}G_{a_j a_{j+1}},
+ \qquad
+ \Phi_\gamma=\arg B_\gamma,
+ \label{eq:paperIII-bargmann}
+\end{equation}
+are gauge invariant.  If an overlap on the loop vanishes, the phase is not
+defined and the support change must be treated separately.
+
+For three normalized rays, Gram positivity gives the exact constraint
+\begin{equation}
+ 1-r_{ab}^2-r_{bc}^2-r_{ca}^2
+ +2r_{ab}r_{bc}r_{ca}\cos\Phi_{abc}\ge0.
+ \label{eq:paperIII-gram-phase-bound}
+\end{equation}
+Thus magnitudes, loop phase and finite realizability are not independent.
+Equation~\eqref{eq:paperIII-gram-phase-bound} also corrects a possible
+overconstraint: consistency does not mean $\Phi_\gamma=0$.  Nonzero
+projective holonomy is legitimate Hilbert geometry and must not be penalized
+merely for being nontrivial.
+
+The physical promotion remains open.  Equation~\eqref{eq:paperIII-bargmann}
+does not by itself prove braid statistics, anyon support, a Parent
+connection, spacetime curvature or Nature occupation.  Those conclusions
+require, respectively, a source-owned configuration space and braid action,
+a physical transport law on the same occupied carrier, and a derived map from
+projective holonomy to a terminal observable.  The rigorous statement is
+therefore
+\begin{equation}
+ \begin{aligned}
+ \text{source-owned GNS probes}
+ &\Longrightarrow \text{projective loop invariant},\\
+ \text{projective loop invariant}
+ &\not\Longrightarrow\text{physical curvature}.
+ \end{aligned}
+\end{equation}
+This makes the overlap formulation useful to the paper while preserving its
+existing source and occupation boundaries.
 
 \section{What remains open}
 
