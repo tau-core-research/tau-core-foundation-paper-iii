@@ -35,6 +35,10 @@ def test_claim_boundaries_and_results():
         "FOC-7 occupation certificate",
         "Later enriched-source status",
         "primitive-extensive finite Trace--Gram law",
+        "eq:record-legacy-migration",
+        "D_{OS}^{\\rm op}=Q_{OS,\\delta}",
+        "Equal rank is insufficient",
+        "cannot derive the",
     ]:
         assert marker in text
     assert "do not prove that a physical parent source creates or occupies complete edges" in normalized

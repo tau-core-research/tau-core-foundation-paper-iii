@@ -1,5 +1,12 @@
 # Tau Core Technical Paper II
 
+**Morphology convention:** the transported body packet is the complete
+stabilized morphological response configuration selected from a base carrier
+and its base-readable seed/load pattern. It is not the bare base, a stored
+formation trajectory or an observer clock.
+MRC-DEF2 treats the upstream base/seed as typed pregeometric relational
+candidates, not ordinary spacetime objects; Nature occupation remains open.
+
 **Foundation-series position:** Paper III
 
 ## Complete Record Edges, Path Holonomy, and Recovery-Correctable Readouts
@@ -63,6 +70,25 @@ this is not past rewriting or evidence of literal Parent traversal. Stable
 record invariance alone does not imply no-signalling; the common preparation
 and normalized later-local instrument used by Paper VI remain separate
 requirements.
+
+## Inherited Descriptor-Migration Boundary
+
+The manuscript now distinguishes the smooth common descriptor from the
+finite operational record,
+
+\[
+\Xi_{OS}^{\mathrm{cont}}=\Phi_{OS}[M_\tau],
+\qquad
+D_{OS}^{\mathrm{op}}=Q_{OS,\delta}(\Xi_{OS}^{\mathrm{cont}}).
+\]
+
+A legacy record law (L) is transportable through the refined ontology only
+when (L=U\circ\Xi_{OS}^{\mathrm{cont}}), equivalently when the continuous
+descriptor fibres refine the (L)-fibres. Equality of fibre relations gives
+exact equivalence; equal rank does not. Hard record cells require the
+additional quantizer-partition compatibility test. Record recovery therefore
+does not derive (Q_{OS,\delta}), terminal calibration, (q_R(R)), or Nature
+occupation.
 
 ## Atemporal Parent-Realization Terminology
 
@@ -147,3 +173,23 @@ The complete-edge transport of this paper can instantiate one premise of
 actuality law. The updated `0/31` census is an acquisition result, not evidence
 for physical edge occupation; all recovery and braid-holonomy results are
 unchanged.
+
+<!-- BEGIN OBSERVER UPDATE 20260914 -->
+## Observer realization update (2026-09-14)
+
+The occupied observer--source context is relational instance data, not a uniquely selected observer identity inferred from the universal seed alone. Physical source realization and record preparation remain separate from conditional closure.
+
+The manuscript distinguishes inherited BRAC contact, conditional coherent-state
+selection and interacting local covariance from physical observer identification,
+preparation and stable resolution. Those physical claims remain open. No
+empirical score was changed. The [dependency and source-result ledger](data/derived/observer_update_2026_09_14.json) records the assumptions and controls.
+<!-- END OBSERVER UPDATE 20260914 -->
+
+<!-- BEGIN LAB UPDATE 20260915 -->
+## Finite lab integration (2026-09-15)
+
+The manuscript imports the scope-specific source, body, observer or terminal
+result from the current lab. Supplied priors, conditional recovery and physical
+selection remain separate. No SI constant, viable universe or Tau-specific
+signal is newly established. See the [source and ownership ledger](data/derived/lab_update_2026_09_15.json).
+<!-- END LAB UPDATE 20260915 -->
