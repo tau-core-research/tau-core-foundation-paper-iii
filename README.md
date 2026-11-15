@@ -1,4 +1,4 @@
-# Tau Core Technical Paper II
+# Tau Core Foundation Paper III
 
 **Morphology convention:** the transported body packet is the complete
 stabilized morphological response configuration selected from a base carrier
@@ -193,3 +193,7 @@ result from the current lab. Supplied priors, conditional recovery and physical
 selection remain separate. No SI constant, viable universe or Tau-specific
 signal is newly established. See the [source and ownership ledger](data/derived/lab_update_2026_09_15.json).
 <!-- END LAB UPDATE 20260915 -->
+
+## Three-pillar closure and postulate-reduction update (2026-11-14)
+
+Foundation Paper III (`paperIII_submission_source/main.tex`) incorporates a scoped transport/holonomy abstract, consolidated pre-Conclusion observer/laboratory/source-state interfaces referencing Technical Paper TD-II, standard `\frac`/`\binom` notation, and the 14 November 2026 upstream boundary (`U1`, `F1`, `POST-OCC-NU1`; `NATURE_LEVEL_CLOSURE = false`).
